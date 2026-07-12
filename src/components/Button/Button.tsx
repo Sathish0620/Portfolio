@@ -15,12 +15,14 @@ const Button = ({
   variant = "primary",
   download = false,
 }: ButtonProps) => {
+  const className = `btn btn-${variant}`;
+
   if (href) {
     return (
       <a
         href={href}
         download={download}
-        className={`btn btn-${variant}`}
+        className={className}
       >
         {children}
       </a>
@@ -29,7 +31,8 @@ const Button = ({
 
   return (
     <button
-      className={`btn btn-${variant}`}
+      type="button"
+      className={className}
       onClick={onClick}
     >
       {children}
