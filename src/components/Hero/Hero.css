@@ -107,3 +107,23 @@ order:-1;
 }
 
 }
+.hero-buttons{
+
+    display:flex;
+
+    gap:18px;
+
+    margin-top:2rem;
+
+}
+@media(max-width:900px){
+
+.hero-buttons{
+
+justify-content:center;
+
+flex-wrap:wrap;
+
+}
+
+}

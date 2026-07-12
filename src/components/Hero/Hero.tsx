@@ -1,7 +1,8 @@
 import "./Hero.css";
 
 import { PROFILE } from "../../constants/profile";
-
+import Button from "../Button/Button";
+import { scrollToSection } from "../../utils/scrollToSection";
 import heroImage from "../../assets/images/Photo.jpeg";
 
 const Hero = () => {
@@ -25,7 +26,13 @@ const Hero = () => {
             {PROFILE.tagline}
           </p>
 
-          <div className="hero-buttons">
+          <div className="hero-buttons">    
+            <Button href={PROFILE.resume} download>
+                Download Resume
+            </Button> 
+            <Button variant="secondary" onClick={()=>scrollToSection("Projects")}>
+              View Projects
+            </Button>
 
           </div>
 

@@ -1,1 +1,15 @@
---text-secondary: #9CA3AF;
+:root{
+
+    --bg:#0F1115;
+
+    --surface:#1A1D23;
+
+    --gold:#D4AF37;
+
+    --text:#F5F5F5;
+
+    --text-secondary:#9CA3AF;
+
+    --border:#2A2F38;
+
+}

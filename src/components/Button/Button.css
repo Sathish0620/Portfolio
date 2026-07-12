@@ -1,0 +1,52 @@
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 14px 28px;
+
+    border-radius: 10px;
+
+    font-weight: 600;
+
+    font-size: 16px;
+
+    text-decoration: none;
+
+    cursor: pointer;
+
+    transition: all .3s ease;
+}
+
+.btn-primary {
+
+    background: var(--gold);
+
+    color: var(--bg);
+
+    border: 2px solid var(--gold);
+
+}
+
+.btn-primary:hover{
+
+    background: transparent;
+
+    color: var(--gold);
+
+}
+
+.btn-secondary{
+
+    border:2px solid var(--gold);
+
+    color:var(--gold);
+
+}
+.btn-secondary:hover{
+
+    background:var(--gold);
+
+    color:var(--bg);
+
+}
