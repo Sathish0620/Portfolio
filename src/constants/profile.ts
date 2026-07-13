@@ -1,6 +1,6 @@
 export const PROFILE = {
   firstName: "Sathish Kumar",
-  lastName: "Madiga Mallayolla",
+  lastName: "MadigaMallayolla",
 
   role: "Full Stack Developer",
 

@@ -1,14 +1,15 @@
 import "./Hero.css";
 
-import { PROFILE } from "../../constants/profile";
-import Button from "../Button/Button";
-import { scrollToSection } from "../../utils/scrollToSection";
 import heroImage from "../../assets/images/Photo.jpeg";
+
+import { PROFILE } from "../../constants/profile";
+import { scrollToSection } from "../../utils/scrollToSection";
+import SocialLinks from "../SocialLinks/SocialLinks";
+import Button from "../Button/Button";
 
 const Hero = () => {
   return (
     <section id="hero" className="hero">
-
       <div className="hero-container">
 
         <div className="hero-content">
@@ -18,28 +19,36 @@ const Hero = () => {
           </p>
 
           <h1 className="hero-title">
-            {PROFILE.firstName}
-            <span>{PROFILE.lastName}</span>
+            {PROFILE.firstName} {PROFILE.lastName}
           </h1>
 
           <p className="hero-description">
             {PROFILE.tagline}
           </p>
 
-          <div className="hero-buttons">    
-            <Button href={PROFILE.resume} download>
-                Download Resume
-            </Button> 
-            <Button variant="secondary" onClick={()=>scrollToSection("Projects")}>
+          <div className="hero-buttons">
+
+            <Button
+              href={PROFILE.resume}
+              download
+            >
+              Download Resume
+            </Button>
+
+            <Button
+              variant="secondary"
+              onClick={() => scrollToSection("projects")}
+            >
               View Projects
             </Button>
 
           </div>
+            <SocialLinks />
 
         </div>
-
+        
         <div className="hero-image">
-
+            <div className="hero-image-glow"></div>
           <img
             src={heroImage}
             alt={PROFILE.firstName}
@@ -48,7 +57,6 @@ const Hero = () => {
         </div>
 
       </div>
-
     </section>
   );
 };
