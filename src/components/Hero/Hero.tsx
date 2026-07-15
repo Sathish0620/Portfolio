@@ -1,18 +1,24 @@
 import "./Hero.css";
 
 import heroImage from "../../assets/images/Photo.jpeg";
-
+import { motion } from "framer-motion";
 import { PROFILE } from "../../constants/profile";
 import { scrollToSection } from "../../utils/scrollToSection";
 import SocialLinks from "../SocialLinks/SocialLinks";
 import Button from "../Button/Button";
-
+import {slideInLeft, scaleIn, fadeInUp} from "../../animations/variants";
 const Hero = () => {
   return (
     <section id="hero" className="hero">
       <div className="hero-container">
 
-        <div className="hero-content">
+        <motion.div className="hero-content"
+            variants={slideInLeft}
+            initial="hidden"
+            animate="visible"
+            transition={{
+                duration: 0.8,
+            }}>    
 
           <p className="hero-role">
             {PROFILE.role}
@@ -26,7 +32,14 @@ const Hero = () => {
             {PROFILE.tagline}
           </p>
 
-          <div className="hero-buttons">
+          <motion.div className="hero-buttons"
+            variants={fadeInUp}
+            initial="hidden"
+            animate="visible"
+            transition={{
+                delay: 0.4,
+                duration: 0.6,
+            }}>
 
             <Button
               href={PROFILE.resume}
@@ -42,21 +55,29 @@ const Hero = () => {
               View Projects
             </Button>
 
-          </div>
+          </motion.div>
             <SocialLinks />
 
-        </div>
+        </motion.div>
         
-        <div className="hero-image">
+        <motion.div className="hero-image"
+            variants={scaleIn}
+            initial="hidden"
+            animate="visible"
+            transition={{
+                duration: 0.9,
+                delay: 0.2,
+            }}>
             <div className="hero-image-glow"></div>
           <img
             src={heroImage}
             alt={PROFILE.firstName}
           />
 
-        </div>
-
+        </motion.div>
+        
       </div>
+    
     </section>
   );
 };

@@ -7,6 +7,15 @@ padding:0;
 box-sizing:border-box;
 
 }
+#root {
+  min-height: 100vh;
+}
+
+html,
+body {
+  overflow-x: clip;
+  overscroll-behavior-x: none;
+}
 
 html{
 
@@ -30,5 +39,9 @@ section{
 
 min-height:100vh;
 
-padding:120px 8%;
 }
+
+
+/*{
+    outline: 1px solid red;
+}*/
