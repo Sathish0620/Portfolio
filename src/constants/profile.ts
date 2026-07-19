@@ -39,6 +39,6 @@ export const PROFILE = {
     "https://www.linkedin.com/in/sathish-m-8638503a9",
 
   resume: "/resume.pdf",
-
+  mapLink: "https://maps.google.com/?q=Kalamazoo, Michigan, USA",
   available: true,
 } as const;
