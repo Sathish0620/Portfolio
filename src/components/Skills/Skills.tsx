@@ -2,7 +2,8 @@ import "./Skills.css";
 
 import SectionTitle from "../SectionTitle/SectionTitle";
 import SkillCard from "../SkillCard/SkillCard";
-
+import { motion } from "framer-motion";
+import { fadeInUp, staggerContainer } from "../../animations/variants";
 import { SKILL_CATEGORIES } from "../../data/skills";
 
 const Skills = () => {
@@ -18,17 +19,25 @@ const Skills = () => {
           subtitle="Technologies I work with"
         />
 
-        <div className="skills-grid">
-
+        <motion.div className="skills-grid"
+          variants={staggerContainer}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+        >
           {SKILL_CATEGORIES.map((category) => (
-            <SkillCard
+            <motion.div
               key={category.title}
-              title={category.title}
-              skills={category.skills}
-            />
+              variants={fadeInUp}
+              transition={{ duration: 0.5 }}
+            >
+              <SkillCard
+                title={category.title}
+                skills={category.skills}
+              />
+            </motion.div>
           ))}
-
-        </div>
+        </motion.div>
 
       </div>
     </section>

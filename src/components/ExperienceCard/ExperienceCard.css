@@ -1,0 +1,172 @@
+.experience-card {
+    position: relative;
+    margin-left: 70px;
+}
+
+.timeline-dot {
+    position: absolute;
+
+    left: -58px;
+    top: 14px;
+
+    width: 18px;
+    height: 18px;
+
+    border-radius: 50%;
+
+    background: var(--gold);
+
+    border: 4px solid var(--background);
+
+    box-shadow: 0 0 0 2px var(--gold);
+
+    z-index: 2;
+}
+
+.experience-content {
+    background: var(--surface);
+
+    border: 1px solid var(--border);
+
+    border-radius: 18px;
+
+    padding: 2rem;
+
+    transition: all 0.3s ease;
+}
+
+.experience-content:hover {
+    transform: translateY(-6px);
+
+    border-color: var(--gold);
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.period {
+    color: var(--gold);
+
+    font-size: 0.9rem;
+
+    font-weight: 600;
+
+    margin-bottom: 0.5rem;
+}
+
+.experience-content h3 {
+    font-size: 1.4rem;
+
+    margin-bottom: 0.3rem;
+}
+
+.experience-content h4 {
+    font-size: 1rem;
+
+    color: var(--text-secondary);
+
+    font-weight: 500;
+
+    margin-bottom: 0.5rem;
+}
+
+.location {
+    color: var(--text-secondary);
+
+    font-size: 0.95rem;
+
+    margin-bottom: 1.5rem;
+}
+
+.technology-list {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 0.75rem;
+
+    margin-bottom: 1.5rem;
+}
+
+.technology-badge {
+    padding: 0.45rem 0.9rem;
+
+    border-radius: 999px;
+
+    background: rgba(212, 175, 55, 0.12);
+
+    color: var(--text);
+
+    font-size: 0.85rem;
+
+    transition: all 0.3s ease;
+}
+
+.technology-badge:hover {
+    background: var(--gold);
+
+    color: var(--background);
+}
+
+.experience-content ul {
+    list-style: none;
+
+    padding: 0;
+
+    margin: 0;
+}
+
+.experience-content li {
+    position: relative;
+
+    padding-left: 1.3rem;
+
+    margin-bottom: 0.8rem;
+
+    color: var(--text-secondary);
+
+    line-height: 1.7;
+}
+
+.experience-content li:last-child {
+    margin-bottom: 0;
+}
+
+.experience-content li::before {
+    content: "▸";
+
+    position: absolute;
+
+    left: 0;
+
+    color: var(--gold);
+
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .experience-card {
+        margin-left: 50px;
+    }
+
+    .timeline-dot {
+        left: -42px;
+    }
+
+    .experience-content {
+        padding: 1.5rem;
+    }
+
+    .experience-content h3 {
+        font-size: 1.2rem;
+    }
+
+    .technology-list {
+        gap: 0.5rem;
+    }
+
+    .technology-badge {
+        font-size: 0.8rem;
+
+        padding: 0.4rem 0.8rem;
+    }
+}

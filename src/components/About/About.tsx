@@ -4,22 +4,26 @@ import heroImage from "../../assets/images/Photo.jpeg";
 import SectionTitle from "../SectionTitle/SectionTitle";
 import { PROFILE } from "../../constants/profile";
 import { ABOUT_CARDS } from "../../data/aboutData";
-import {fadeInUp} from "../../animations/variants";
+import { fadeInUp, staggerContainer } from "../../animations/variants";
 import { motion } from "framer-motion";
+
 const About = () => {
-  
   return (
     <section id="about" className="about">
       <div className="about-container">
-
         <SectionTitle
           title="About Me"
           subtitle="Get to know me better"
         />
 
         <div className="about-content">
-
-          <div className="about-image">
+          <motion.div
+            className="about-image"
+            variants={fadeInUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.3 }}
+          >
             <img
               src={heroImage}
               alt={PROFILE.firstName}
@@ -30,17 +34,18 @@ const About = () => {
                 🟢 Available for Opportunities
               </span>
             )}
-          </div>
+          </motion.div>
 
-          <div className="about-info">
+          <motion.div
+            className="about-info"
+            variants={fadeInUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.3 }}
+          >
+            <h3>Full Stack Developer</h3>
 
-            <h3>
-              Full Stack Developer
-            </h3>
-
-            <p>
-              {PROFILE.about}
-            </p>
+            <p>{PROFILE.about}</p>
 
             <div className="about-highlights">
               {PROFILE.highlights.map((highlight) => (
@@ -50,41 +55,35 @@ const About = () => {
               ))}
             </div>
 
-            <motion.div 
-              variants={fadeInUp}
+            <motion.div
+              className="about-cards"
+              variants={staggerContainer}
               initial="hidden"
               whileInView="visible"
-              viewport={{ once:true }}
-              transition={{
-              duration:.5
-              }}
-              className="about-cards">
-                {ABOUT_CARDS.map(card => {
-                  const Icon = card.icon;
+              viewport={{ once: true, amount: 0.2 }}
+            >
+              {ABOUT_CARDS.map((card) => {
+                const Icon = card.icon;
 
-                    return (
+                return (
+                  <motion.div
+                    key={card.title}
+                    className="about-card"
+                    variants={fadeInUp}
+                  >
+                    <div className="card-icon">
+                      <Icon />
+                    </div>
 
-                    <div className="about-card">
+                    <h4>{card.title}</h4>
 
-                      <div className="card-icon">
-
-                        <Icon />
-
-                      </div>
-
-                      <h4>{card.title}</h4>
-
-                      <p>{card.value}</p>
-
-                    </div> 
-                    )
-                })}
+                    <p>{card.value}</p>
+                  </motion.div>
+                );
+              })}
             </motion.div>
-
-          </div>
-
+          </motion.div>
         </div>
-
       </div>
     </section>
   );

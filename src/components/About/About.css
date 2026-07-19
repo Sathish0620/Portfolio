@@ -81,21 +81,28 @@
   gap: 1rem;
 }
 
+.about-cards > div {
+  height: 100%;
+}
+
+.about-card {
+  height: 100%;
+}
 .about-card {
   background: var(--surface);
 
-  padding: 1.5rem;
+  padding: 2rem;
 
   border: 1px solid var(--border);
 
-  border-radius: 12px;
+  border-radius: 16px;
 
-  transition: .3s;
+  transition: all .3s ease;
 }
 
 .about-card:hover {
   border-color: var(--gold);
-  transform: translateY(-5px);
+  transform: translateY(-6px);
 }
 
 .about-card h4 {
