@@ -1,5 +1,4 @@
 import "./Hero.css";
-
 import heroImage from "../../assets/images/Photo.jpeg";
 import { motion } from "framer-motion";
 import { PROFILE } from "../../constants/profile";
