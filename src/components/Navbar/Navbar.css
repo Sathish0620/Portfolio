@@ -3,14 +3,23 @@
 ========================================== */
 
 .navbar {
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
+
   width: 100%;
-  background: rgba(15, 17, 21, 0.85);
+
+  background: rgba(15, 17, 21, 0.82);
   backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
   border-bottom: 1px solid var(--border);
-  transition: all 0.3s ease;
-  z-index: 999;
+
+  transition:
+    background 0.3s ease,
+    box-shadow 0.3s ease;
+
+  z-index: 1000;
 }
 
 .navbar.scrolled {
@@ -43,6 +52,10 @@
   display: flex;
   align-items: center;
   gap: 12px;
+
+  background: none;
+  border: none;
+  padding: 0;
 
   cursor: pointer;
 }
@@ -97,11 +110,14 @@
 
   padding: 8px 12px;
 
-  transition: color 0.25s ease;
+  transition:
+    color 0.25s ease,
+    transform 0.25s ease;
 }
 
 .nav-link:hover {
   color: var(--gold);
+  transform: translateY(-1px);
 }
 
 /* ==========================================
@@ -178,9 +194,12 @@
   flex-direction: column;
   gap: 14px;
 
-  background: var(--bg);
+  background: rgba(15, 17, 21, 0.98);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
 
   border-top: 1px solid var(--border);
+
   box-shadow: 0 12px 25px rgba(0, 0, 0, 0.35);
 
   padding: 20px;
@@ -254,6 +273,20 @@
 
 .mobile-resume-btn:hover {
   opacity: 0.9;
+}
+
+/* ==========================================
+   ACCESSIBILITY
+========================================== */
+
+.logo:focus-visible,
+.nav-link:focus-visible,
+.resume-btn:focus-visible,
+.menu-btn:focus-visible,
+.mobile-nav-link:focus-visible,
+.mobile-resume-btn:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 4px;
 }
 
 /* ==========================================

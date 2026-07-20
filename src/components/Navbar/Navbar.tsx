@@ -34,7 +34,7 @@ const Navbar = () => {
         <div
           className="logo"
           onClick={() => 
-            handleNavigation("hero")
+            handleNavigation("home")
         }
         >
           <span className="logo-box">SK</span>

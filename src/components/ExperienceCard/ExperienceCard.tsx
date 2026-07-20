@@ -19,7 +19,7 @@ const ExperienceCard = ({
 }: ExperienceCardProps) => {
   return (
     <div className="experience-card">
-      <span className="timeline-dot"></span>
+      <span className="timeline-dot" aria-hidden="true"></span>
 
       <div className="experience-content">
         <p className="period">{period}</p>
@@ -32,13 +32,20 @@ const ExperienceCard = ({
 
         <div className="technology-list">
           {technologies.map((tech) => (
-            <span key={tech}>{tech}</span>
+            <span
+              key={tech}
+              className="technology-badge"
+            >
+              {tech}
+            </span>
           ))}
         </div>
 
         <ul>
-          {achievements.map((item) => (
-            <li key={item}>{item}</li>
+          {achievements.map((achievement) => (
+            <li key={achievement}>
+              {achievement}
+            </li>
           ))}
         </ul>
       </div>

@@ -1,5 +1,5 @@
 .contact {
-  padding: 6rem 1.5rem;
+  padding: 3rem 1.5rem;
 }
 
 .contact-container {
@@ -75,20 +75,9 @@
   resize: vertical;
 }
 
-.contact-form button {
-  padding: 1rem;
-  border: none;
-  border-radius: 10px;
-  background: var(--gold);
-  color: var(--bg);
-  font-size: 1rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: transform 0.3s ease;
-}
-
-.contact-form button:hover {
-  transform: translateY(-2px);
+.contact-link:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 4px;
 }
 
 @media (max-width: 768px) {

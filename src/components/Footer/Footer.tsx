@@ -1,30 +1,31 @@
 import "./Footer.css";
+
 import { motion } from "framer-motion";
-import { fadeInUp } from "../../animations/variants";
 import { FaArrowUp } from "react-icons/fa";
 
-import SocialLinks from "../SocialLinks/SocialLinks";
+import { fadeInUp } from "../../animations/variants";
 import { PROFILE } from "../../constants/profile";
+
+import SocialLinks from "../SocialLinks/SocialLinks";
 
 const Footer = () => {
   return (
     <footer className="footer">
       <motion.div
         className="footer-container"
-        initial="hidden"
-        animate="visible"
         variants={fadeInUp}
+        initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}
-
       >
-        <h2>Thanks for visiting!</h2>
-
         <p className="footer-message">
-          Let's build something amazing together.
+          Thanks for taking the time to explore my portfolio.
+          I'm always excited to connect, collaborate, and build impactful software.
         </p>
 
-        <SocialLinks />
+        <motion.div variants={fadeInUp}>
+          <SocialLinks />
+        </motion.div>
 
         <p className="footer-tech">
           Built with React • TypeScript • Vite
@@ -34,11 +35,12 @@ const Footer = () => {
           © {new Date().getFullYear()} {PROFILE.firstName}. All rights reserved.
         </p>
 
-        <a href="#hero"
+        <a
+          href="#home"
           className="back-to-top"
           aria-label="Back to top"
         >
-          <FaArrowUp />
+          <FaArrowUp aria-hidden="true" />
           <span>Back to Top</span>
         </a>
       </motion.div>

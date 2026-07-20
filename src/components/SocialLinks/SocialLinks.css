@@ -27,3 +27,8 @@
   color: var(--gold);
   transform: translateY(-4px);
 }
+
+.social-links a:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 4px;
+}

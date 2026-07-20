@@ -1,12 +1,18 @@
 import "./Contact.css";
-import { PROFILE } from "../../constants/profile";
-import { motion } from "framer-motion";
-import { FaEnvelope, FaPhoneAlt, FaMapMarkerAlt } from "react-icons/fa";
 
+import { motion } from "framer-motion";
+import {
+  FaEnvelope,
+  FaMapMarkerAlt,
+  FaPhoneAlt,
+} from "react-icons/fa";
+
+import { PROFILE } from "../../constants/profile";
+import { fadeInUp, staggerContainer } from "../../animations/variants";
+
+import Button from "../Button/Button";
 import SectionTitle from "../SectionTitle/SectionTitle";
 import SocialLinks from "../SocialLinks/SocialLinks";
-
-import { fadeInUp, staggerContainer } from "../../animations/variants";
 
 const Contact = () => {
   return (
@@ -37,39 +43,52 @@ const Contact = () => {
             </p>
 
             <div className="contact-item">
-              <FaEnvelope className="contact-icon" />
-              <a className="contact-link" href={`mailto:${PROFILE.email}`}>
+              <FaEnvelope
+                className="contact-icon"
+                aria-hidden="true"
+              />
+
+              <a
+                className="contact-link"
+                href={`mailto:${PROFILE.email}`}
+              >
                 {PROFILE.email}
               </a>
             </div>
 
             <div className="contact-item">
-              <FaPhoneAlt className="contact-icon" />
-              <a className="contact-link" href={`tel:${PROFILE.phone}`}>
+              <FaPhoneAlt
+                className="contact-icon"
+                aria-hidden="true"
+              />
+
+              <a
+                className="contact-link"
+                href={`tel:${PROFILE.phone}`}
+              >
                 {PROFILE.phone}
               </a>
             </div>
 
             <div className="contact-item">
-              <FaMapMarkerAlt className="contact-icon" />
+              <FaMapMarkerAlt
+                className="contact-icon"
+                aria-hidden="true"
+              />
+
               <a
-
                 href={PROFILE.mapLink}
-
                 target="_blank"
-
                 rel="noopener noreferrer"
-
                 className="contact-link"
-
               >
-
                 {PROFILE.location}
-
               </a>
             </div>
 
-            <SocialLinks />
+            <motion.div variants={fadeInUp}>
+              <SocialLinks />
+            </motion.div>
           </motion.div>
 
           <motion.form
@@ -96,9 +115,9 @@ const Contact = () => {
               placeholder="Your Message"
             />
 
-            <button type="submit">
+            <Button type="submit">
               Send Message
-            </button>
+            </Button>
           </motion.form>
         </motion.div>
       </div>

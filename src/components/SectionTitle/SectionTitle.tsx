@@ -7,11 +7,11 @@ interface SectionTitleProps {
 
 const SectionTitle = ({ title, subtitle }: SectionTitleProps) => {
   return (
-    <div className="section-title">
+    <header className="section-title">
       <h2>{title}</h2>
 
       {subtitle && <p>{subtitle}</p>}
-    </div>
+    </header>
   );
 };
 

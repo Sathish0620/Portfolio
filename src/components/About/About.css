@@ -1,5 +1,5 @@
 .about {
-  padding: 6rem 1.5rem;
+  padding: 3rem 1.5rem;
 }
 
 .about-container {
@@ -64,12 +64,15 @@
   margin: 2rem 0;
 
   display: grid;
-  grid-template-columns: repeat(2,1fr);
+  grid-template-columns: repeat(2, 1fr);
 
   gap: 1rem;
+
+  list-style: none;
+  padding: 0;
 }
 
-.about-highlights span {
+.about-highlights li {
   color: var(--text);
 }
 
@@ -86,9 +89,7 @@
 }
 
 .about-card {
-  height: 100%;
-}
-.about-card {
+   height: 100%;
   background: var(--surface);
 
   padding: 2rem;

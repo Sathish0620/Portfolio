@@ -1,5 +1,5 @@
 import "./ProjectCard.css";
-import type { Project } from "../../data/projects.ts";
+import type { Project } from "../../data/projects";
 import { FaGithub } from "react-icons/fa";
 import { FiExternalLink } from "react-icons/fi";
 
@@ -44,16 +44,16 @@ const ProjectCard = ({
           ))}
         </ul>
 
-        <div className="technology-list">
+        <ul className="technology-list">
           {technologies.map((tech) => (
-            <span
+            <li
               key={tech}
               className="technology-badge"
             >
               {tech}
-            </span>
+            </li>
           ))}
-        </div>
+        </ul>
 
         <div className="project-links">
           <a

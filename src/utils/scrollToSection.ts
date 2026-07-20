@@ -3,8 +3,11 @@ export const scrollToSection = (id: string) => {
 
   if (!section) return;
 
-  section.scrollIntoView({
+  const navbar = document.querySelector(".navbar") as HTMLElement | null;
+  const navbarHeight = navbar?.offsetHeight ?? 0;
+
+  window.scrollTo({
+    top: section.offsetTop - navbarHeight,
     behavior: "smooth",
-    block: "start",
   });
 };

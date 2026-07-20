@@ -1,11 +1,14 @@
 import "./About.css";
 
+import { motion } from "framer-motion";
+
 import heroImage from "../../assets/images/Photo.jpeg";
-import SectionTitle from "../SectionTitle/SectionTitle";
+
 import { PROFILE } from "../../constants/profile";
 import { ABOUT_CARDS } from "../../data/aboutData";
 import { fadeInUp, staggerContainer } from "../../animations/variants";
-import { motion } from "framer-motion";
+
+import SectionTitle from "../SectionTitle/SectionTitle";
 
 const About = () => {
   return (
@@ -26,7 +29,7 @@ const About = () => {
           >
             <img
               src={heroImage}
-              alt={PROFILE.firstName}
+              alt={`${PROFILE.firstName} ${PROFILE.lastName} portrait`}
             />
 
             {PROFILE.available && (
@@ -47,13 +50,13 @@ const About = () => {
 
             <p>{PROFILE.about}</p>
 
-            <div className="about-highlights">
+            <ul className="about-highlights">
               {PROFILE.highlights.map((highlight) => (
-                <span key={highlight}>
+                <li key={highlight}>
                   ✓ {highlight}
-                </span>
+                </li>
               ))}
-            </div>
+            </ul>
 
             <motion.div
               className="about-cards"

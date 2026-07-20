@@ -1,12 +1,9 @@
-*{
-
-margin:0;
-
-padding:0;
-
-box-sizing:border-box;
-
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
+
 #root {
   min-height: 100vh;
 }
@@ -17,31 +14,30 @@ body {
   overscroll-behavior-x: none;
 }
 
-html{
-
-scroll-behavior:smooth;
-
+html {
+  scroll-behavior: smooth;
 }
 
-body{
-
-font-family:Inter,sans-serif;
-
-background:#0F1115;
-
-color:white;
-
-overflow-x:hidden;
-
+body {
+  font-family: Inter, sans-serif;
+  background: #0f1115;
+  color: white;
+  overflow-x: hidden;
 }
 
-section{
-
-min-height:100vh;
-
+/* Offset the page for the fixed navbar */
+main {
+  padding-top: 78px;
 }
 
+/* Sections */
+section {
+  min-height: 100vh;
+}
 
-/*{
-    outline: 1px solid red;
-}*/
+/* Debug layout */
+/*
+* {
+  outline: 1px solid red;
+}
+*/
