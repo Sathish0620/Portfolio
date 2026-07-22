@@ -8,7 +8,7 @@ export const PROFILE = {
     "Full Stack Developer specializing in Java, Spring Boot, React, AWS, and AI-powered applications.",
 
   about:
-    "I'm a Full Stack Developer with 2+ years of experience building scalable, secure, and cloud-native applications. I enjoy solving real-world problems using Java, Spring Boot, React, TypeScript, PostgreSQL, AWS, and modern AI technologies while writing clean, maintainable code.",
+    "I'm a Full Stack Developer with 3+ years of experience building scalable, secure, and cloud-native applications. I enjoy solving real-world problems using Java, Spring Boot, React, TypeScript, PostgreSQL, AWS, and modern AI technologies while writing clean, maintainable code.",
 
   highlights: [
     "Java & Spring Boot",
@@ -25,7 +25,7 @@ export const PROFILE = {
   currentCompany: "YTT Global Services",
 
   specialization:
-    "Java • Spring Boot • React • AWS • AI",
+  "Java • Spring Boot • React • TypeScript • AWS • AI",
 
   location: "Michigan, USA",
 
@@ -38,7 +38,7 @@ export const PROFILE = {
   linkedin:
     "https://www.linkedin.com/in/sathishkumarm20620",
 
-  resume: "/resume.pdf",
+  resume: "/Sathish_Kumar_Resume.pdf",
   mapLink: "https://maps.google.com/?q=Kalamazoo, Michigan, USA",
   available: true,
 } as const;

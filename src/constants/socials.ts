@@ -3,21 +3,22 @@ import {
   FaLinkedin,
   FaEnvelope,
 } from "react-icons/fa";
+import { PROFILE } from "./profile";
 
 export const SOCIAL_LINKS = [
   {
     name: "GitHub",
-    url: "https://github.com/Sathish0620",
+    url: PROFILE.github,
     icon: FaGithub,
   },
   {
     name: "LinkedIn",
-    url: "https://www.linkedin.com/in/sathish-m-8638503a9",
+    url: PROFILE.linkedin,
     icon: FaLinkedin,
   },
   {
     name: "Email",
-    url: "mailto:sathishkumarm7719@gmail.com",
+    url: `mailto:${PROFILE.email}`,
     icon: FaEnvelope,
   },
 ] as const;

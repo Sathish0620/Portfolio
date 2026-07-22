@@ -55,7 +55,7 @@ const Navbar = () => {
 
         <div className="nav-actions">
           <a
-            href="/PROFILE.resume"
+            href="/Sathish_Kumar_Resume.pdf"
             download
             className="resume-btn"
           >
@@ -83,7 +83,7 @@ const Navbar = () => {
         ))}
 
         <a
-          href="/resume.pdf"
+          href="/Sathish_Kumar_Resume.pdf"
           download
           className="mobile-resume-btn"
           onClick={() => setIsMenuOpen(false)}

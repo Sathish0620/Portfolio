@@ -77,6 +77,13 @@ const Contact = () => {
         message: "Message sent successfully!",
       });
 
+      setTimeout(() => {
+        setStatus({
+          type: null,
+          message: "",
+        });
+      }, 3000);
+
       setFormData(initialFormData);
     } catch {
       setStatus({
