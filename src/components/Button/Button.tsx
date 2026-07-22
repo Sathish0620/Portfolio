@@ -10,6 +10,7 @@ interface ButtonProps {
   download?: boolean;
   target?: "_blank" | "_self";
   type?: "button" | "submit" | "reset";
+  disabled?: boolean;
 }
 
 const Button = ({

@@ -1,5 +1,9 @@
 import "./Contact.css";
-
+import { useState } from "react";
+import { sendEmail } from "../../services/emailService";
+import type{
+  ContactFormData,
+} from "../../services/emailService";
 import { motion } from "framer-motion";
 import {
   FaEnvelope,
@@ -15,6 +19,74 @@ import SectionTitle from "../SectionTitle/SectionTitle";
 import SocialLinks from "../SocialLinks/SocialLinks";
 
 const Contact = () => {
+  const initialFormData: ContactFormData = {
+  from_name: "",
+  from_email: "",
+  subject: "",
+  message: "",
+  };
+
+  const [formData, setFormData] =
+    useState<ContactFormData>(initialFormData);
+
+  const [isSending, setIsSending] = useState(false);
+
+  const [status, setStatus] = useState<{
+    type: "success" | "error" | null;
+    message: string;
+  }>({
+    type: null,
+    message: "",
+  });
+  const handleChange = (
+  e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const { name, value } = e.target;
+
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+  };
+  const handleSubmit = async (
+  e: React.FormEvent<HTMLFormElement>
+  ) => {
+    e.preventDefault();
+
+    if (
+      !formData.from_name.trim() ||
+      !formData.from_email.trim() ||
+      !formData.subject.trim() ||
+      !formData.message.trim()
+    ) {
+      setStatus({
+        type: "error",
+        message: "Please fill in all fields.",
+      });
+
+      return;
+    }
+
+    try {
+      setIsSending(true);
+
+      await sendEmail(formData);
+
+      setStatus({
+        type: "success",
+        message: "Message sent successfully!",
+      });
+
+      setFormData(initialFormData);
+    } catch {
+      setStatus({
+        type: "error",
+        message: "Failed to send message. Please try again.",
+      });
+    } finally {
+      setIsSending(false);
+    }
+  };
   return (
     <section id="contact" className="contact">
       <div className="contact-container">
@@ -94,30 +166,53 @@ const Contact = () => {
           <motion.form
             className="contact-form"
             variants={fadeInUp}
+            onSubmit={handleSubmit}
           >
             <input
               type="text"
+              name="from_name"
               placeholder="Your Name"
+              value={formData.from_name}
+              onChange={handleChange}
+              required
             />
 
             <input
               type="email"
+              name="from_email"
               placeholder="Your Email"
+              value={formData.from_email}
+              onChange={handleChange}
+              required
             />
 
             <input
               type="text"
+              name="subject"
               placeholder="Subject"
+              value={formData.subject}
+              onChange={handleChange}
+              required
             />
 
             <textarea
               rows={6}
+              name="message"
               placeholder="Your Message"
+              value={formData.message}
+              onChange={handleChange}
+              required
             />
 
-            <Button type="submit">
-              Send Message
+            <Button type="submit" disabled={isSending}> 
+              {isSending ? "Sending..." : "Send Message"}
             </Button>
+            {status.type && (
+            <p className={`form-status ${status.type}`}>
+              {status.message}
+            </p>
+          )}
+                
           </motion.form>
         </motion.div>
       </div>

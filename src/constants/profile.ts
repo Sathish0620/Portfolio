@@ -1,6 +1,6 @@
 export const PROFILE = {
   firstName: "Sathish Kumar",
-  lastName: "Madiga Mallayolla",
+  lastName: "MadigaMallayolla",
 
   role: "Full Stack Developer",
 
@@ -17,7 +17,7 @@ export const PROFILE = {
     "AI Integration",
   ],
 
-  experience: "2+ Years",
+  experience: "3+ Years",
 
   education:
     "Master's in Computer Science • Western Michigan University",
@@ -29,14 +29,14 @@ export const PROFILE = {
 
   location: "Michigan, USA",
 
-  email: "sathishkumarm7719@gmail.com",
+  email: "sathishkumarm2062@gmail.com",
 
   phone: "+1 (269) 391-7283",
 
   github: "https://github.com/Sathish0620",
 
   linkedin:
-    "https://www.linkedin.com/in/sathish-m-8638503a9",
+    "https://www.linkedin.com/in/sathishkumarm20620",
 
   resume: "/resume.pdf",
   mapLink: "https://maps.google.com/?q=Kalamazoo, Michigan, USA",
